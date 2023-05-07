@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div:has(input) {
+        border: 1px solid black;
+        padding: 15px;
+        width: 90vw;
+    }
+    .forms {
+        display: flex;
+        border: none;
+        padding: 0;
+    }
+    span {
+        display: none;
+    }
+
+    .mostrar {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="forms">
+    <div id="divInserir">
+        <form action="send" id="form">
+            <label for="">Inserir Usuário</label><br><br>
+            Nome: <br> <input type="text" placeholder="Insira seu nome" id="nome">
+            <br><br>
+            Telefone*: <br> <input type="text" placeholder="Insira seu telefone" id="fone" required> <span id="erro">Insira um número!</span> <span id="existe">Número já cadastrado ou inválido</span>
+            <br><br>
+            Endereço: <br> <input type="text" placeholder="Insira seu endereço" id="end">
+            <br><br>
+            Email: <br> <input type="text" placeholder="Insira seu email" id="email">
+            <br><br>
+            <button onclick="inserir()" type="button">Enviar</button>
+        </form>
+    </div>
+    <br>
+    <div>
+        <label for="">Deletar usuário</label><br><br>
+        Telefone do usuário: <input type="text" placeholder="Digite um número" id="foneCheck">
+        <button onclick="deletar()">Deletar</button>
+        <br> <br> <br> <br>
+        <label for="">Consultar um Número</label><br><br>
+        Telefone do usuário: <input type="text" placeholder="Digite um número" id="foneConsultar"><br><br>
+        <button onclick="consultar()">Consultar número</button>
+    </div>
+    <br>
+    <br>
+    <div>
+        <label for="">Alterar informações</label><br><br>
+        Telefone que terá alterações: <br> <input type="text" id="foneChange" required>
+        <br><br>
+        Nome: <br> <input type="text" id="nomeChange">
+        <br><br>
+        Endereço: <br> <input type="text" id="endChange">
+        <br><br>
+        Email: <br> <input type="text" id="emailChange">
+        <br><br>
+        <button onclick="editar()">Alterar informações</button>
+    </div>
+</div>
+<div>
+    <h2>Usuários cadastrados</h2>
+    <div id="tabela"></div>
+</div>
+    <script src="main.js"></script>
+</body>
+
+</html>
